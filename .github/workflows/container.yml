@@ -37,9 +37,13 @@ jobs:
         run: |
           pip freeze
 
-      - name: Run Tests Using Makefile For Android
+      - name: Run Tests Using Robot For Android
         run: |
-          make run_all_in_parallel
+            robot --variable version:12 --variable platformName:Android --variable deviceName:"Galaxy S22 5G" --variable isRealMobile:true --variable visual:false --variable network:false --variable console:false --report None --output reports/DriverDash/Android/DriveDash_samsung_output.xml --log reports/DriverDash/Android/DriverDash_samsung_log.html --exclude db DriverDash/tests/Android/DriverDash.robot
+
+      - name: Run Tests Using Robot For iOS
+        run: |
+            robot --variable version:16 --variable platformName:iOS --variable deviceName:"iPhone 13" --variable isRealMobile:true --variable visual:false --variable network:false --variable console:false --report None --output reports/DriverDash/iOS/DriveDash_iphone_13_output.xml --log reports/DriverDash/iOS/DriverDash_iphone_13_log.html --exclude db DriverDash/tests/iOS/DriverDash.robot
 
       - name: Upload test results
         uses: actions/upload-artifact@v1
@@ -61,8 +65,9 @@ jobs:
           run: |
             export OWNER="$(echo "${{ github.repository }}" | awk -F / '{print $1}' | sed -e "s/:refs//")"
             export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
-            echo "::set-env name=REPOSITORY_OWNER::$OWNER"
-            echo "::set-env name=REPOSITORY_NAME::$REPO"
+            echo "REPOSITORY_OWNER=$OWNER" >> "$GITHUB_ENV"
+            echo "REPOSITORY_NAME=$REPO" >> "$GITHUB_ENV"
+
         - name: Send report to commit
           uses: joonvena/robotframework-reporter-action@v0.1
           env:
