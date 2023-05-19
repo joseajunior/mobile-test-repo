@@ -1,6 +1,6 @@
 *** Settings ***
-Library    AppiumLibrary
-Resource    HomeBaseLocators.resource
+Library     AppiumLibrary
+Resource    ${CURDIR}${/}HomeBaseLocators.resource
 
 *** Variables ***
 ${_more_recipt_history}               id=com.wex.fleet.driverdash.stage:id/more_receipt_history_text

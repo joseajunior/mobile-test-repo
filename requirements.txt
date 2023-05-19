@@ -11,6 +11,7 @@ requests==2.30.0
 robotframework==6.0.2
 robotframework-appiumlibrary==1.6.4
 robotframework-databaselibrary==1.2.4
+robotframework-requests
 selenium==3.141.0
 six==1.16.0
 urllib3==2.0.2

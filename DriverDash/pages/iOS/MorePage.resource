@@ -1,6 +1,6 @@
 *** Settings ***
 Library     AppiumLibrary
-Resource    HomeBaseLocators.resource
+Resource    ${CURDIR}${/}HomeBaseLocators.resource
 
 *** Variables ***
 ${_more_recipt_history}               chain=**/XCUIElementTypeStaticText[`label == "Receipt history"`]
