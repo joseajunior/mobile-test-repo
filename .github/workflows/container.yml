@@ -37,9 +37,13 @@ jobs:
         run: |
           pip freeze
 
-      - name: Run Tests Using Makefile
+      - name: Run Tests Using Makefile For Android
         run: |
-          make run_all_in_parallel
+          make test_Driver_Dash_Android_Samsung_Galaxy_S22_5G
+
+      - name: Run Tests Using Makefile For iOS
+        run: |
+          make test_Driver_Dash_iOS_iPhone_13
 
       - name: Upload test results
         uses: actions/upload-artifact@v1
