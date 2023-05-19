@@ -3,3 +3,4 @@ robotframework
 robotframework-appiumlibrary
 robotframework-databaselibrary
 requests
+pyyaml
