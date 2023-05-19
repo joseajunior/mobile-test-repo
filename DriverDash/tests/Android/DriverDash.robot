@@ -83,7 +83,7 @@ Add And Remove Card
     Confirm Remove Card
 
 Testing Database
-    [Tags]    checked    test
+    [Tags]    checked    test    db
     [Setup]    Connect To Postgres Database
     ${code}    Get Latest Code For "${phone_number}" Phone Number
     Log To Console    Code: ${code}
