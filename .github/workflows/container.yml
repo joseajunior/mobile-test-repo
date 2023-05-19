@@ -48,6 +48,7 @@ jobs:
             robot --variable version:16 --variable platformName:iOS --variable deviceName:"iPhone 13" --variable isRealMobile:true --variable visual:false --variable network:false --variable console:false --report None --output reports/DriverDash/iOS/DriveDash_iphone_13_output.xml --log reports/DriverDash/iOS/DriverDash_iphone_13_log.html --exclude db DriverDash/tests/iOS/DriverDash.robot
 
       - name: Create test results file
+        if: always()
         run: |
           rebot --name Frontend --nostatusrc --outputdir logs --output ${{ github.workspace }}/reports/output.xml ${{ github.workspace }}/reports/DriverDash/Android/DriveDash_samsung_output.xml ${{ github.workspace }}/reports/DriverDash/iOS/DriveDash_iphone_13_output.xml
 
