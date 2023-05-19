@@ -1,4 +1,4 @@
-name: Demo Push
+name: Robot Test
 
 on:
   push:
@@ -10,41 +10,30 @@ on:
     tags:
       - v*
 
-env:
-  IMAGE_NAME: frontend-clone
-
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
   push:
     runs-on: ubuntu-latest
-    permissions:
-      packages: write
-      contents: read
+    # container: ghcr.io/joseajunior/basecontainer:latest
 
     steps:
       - uses: actions/checkout@v3
 
-      - name: Log in to registry
-        # This is where you will update the personal access token to GITHUB_TOKEN
-        run: echo "${{ secrets.TOKEN }}" | docker login ghcr.io -u $ --password-stdin
+      - name: Installing requirements
+        run: |
+          pip install -r ${{ github.workspace }}requirements.txt
 
       - name: Build image
         run: docker build . --file Dockerfile --tag $IMAGE_NAME --label "runnumber=${GITHUB_RUN_ID}"
 
-      - name: Push image
+      - name: Run Tests Using Makefile
         run: |
-          IMAGE_ID=ghcr.io/${{ github.repository_owner }}/$IMAGE_NAME
+          make run_all_in_parallel
 
-          # Change all uppercase to lowercase
-          IMAGE_ID=$(echo $IMAGE_ID | tr '[A-Z]' '[a-z]')
-          # Strip git ref prefix from version
-          VERSION=$(echo "${{ github.ref }}" | sed -e 's,.*/\(.*\),\1,')
-          # Strip "v" prefix from tag name
-          [[ "${{ github.ref }}" == "refs/tags/"* ]] && VERSION=$(echo $VERSION | sed -e 's/^v//')
-          # Use Docker `latest` tag convention
-          [ "$VERSION" == "main" ] && VERSION=latest
-          echo IMAGE_ID=$IMAGE_ID
-          echo VERSION=$VERSION
-          docker tag $IMAGE_NAME $IMAGE_ID:$VERSION
-          docker push $IMAGE_ID:$VERSION
+      - name: Upload test results
+        uses: actions/upload-artifact@v1
+        if: always()
+        with:
+          name: reports
+          path: ${{ github.workspace }}/reports
