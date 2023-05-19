@@ -1,6 +1,6 @@
 *** Settings ***
 Library     AppiumLibrary
-Resource    ${CURDIR}${/}HomeBaseLocators.Resource
+Resource    ${CURDIR}${/}HomeBaseLocators.resource
 
 *** Variables ***
 ${_SAFETY_MESSAGE_OK}    id=android:id/button1
