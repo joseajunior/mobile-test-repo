@@ -13,7 +13,7 @@ on:
 jobs:
   # Push image to GitHub Packages.
   # See also https://docs.docker.com/docker-hub/builds/
-  push:
+  test:
     runs-on: ubuntu-latest
     # container: ghcr.io/joseajunior/basecontainer:latest
 
@@ -39,11 +39,7 @@ jobs:
 
       - name: Run Tests Using Makefile For Android
         run: |
-          make test_Driver_Dash_Android_Samsung_Galaxy_S22_5G
-
-      - name: Run Tests Using Makefile For iOS
-        run: |
-          make test_Driver_Dash_iOS_iPhone_13
+          make run_all_in_parallel
 
       - name: Upload test results
         uses: actions/upload-artifact@v1
@@ -51,3 +47,27 @@ jobs:
         with:
           name: reports
           path: ${{ github.workspace }}/reports
+
+  generate_report:
+    if: always()
+    needs: [test] 
+    runs-on: ubuntu-latest
+    steps:
+        - name: Download reports
+          uses: actions/download-artifact@v1
+          with:
+            name: reports
+        - name: Get Repository Owner & Name
+          run: |
+            export OWNER="$(echo "${{ github.repository }}" | awk -F / '{print $1}' | sed -e "s/:refs//")"
+            export REPO="$(echo "${{ github.repository }}" | awk -F / '{print $2}' | sed -e "s/:refs//")"
+            echo "::set-env name=REPOSITORY_OWNER::$OWNER"
+            echo "::set-env name=REPOSITORY_NAME::$REPO"
+        - name: Send report to commit
+          uses: joonvena/robotframework-reporter-action@v0.1
+          env:
+            GH_ACCESS_TOKEN: ${{ secrets.TOKEN }}
+            REPO_OWNER: ${{ env.REPOSITORY_OWNER }}
+            COMMIT_SHA: ${{ github.sha }}
+            REPOSITORY: ${{ env.REPOSITORY_NAME }}
+            REPORT_PATH: reports

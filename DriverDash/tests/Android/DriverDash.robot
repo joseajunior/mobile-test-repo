@@ -50,6 +50,7 @@ E2E Test Case Login/More/Logout
     [Teardown]    Close Driver Dash Application
 
 Login With Number
+    [Tags]    db
     [Setup]    Open Driver Dash Application
     Click On Get Started Button
     Click On Don't Have Username or Password Button
