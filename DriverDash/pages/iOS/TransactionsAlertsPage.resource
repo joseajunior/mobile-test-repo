@@ -1,5 +1,5 @@
 *** Settings ***
-Library     AppiumLibrary
+Library     WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_CONTINUE_BTN_LOCATOR}    chain=**/XCUIElementTypeButton[`label == "Continue"`]

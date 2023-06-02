@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_licenses_title}          xpath=//XCUIElementTypeNavigationBar[@name="Licenses"]/XCUIElementTypeStaticText[@name="Licenses"]

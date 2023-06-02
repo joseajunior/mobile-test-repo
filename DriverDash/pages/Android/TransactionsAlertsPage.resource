@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_TURN_ON_BTN_LOCATOR}    id=com.wex.fleet.driverdash.stage:id/notifications_turn_on_button

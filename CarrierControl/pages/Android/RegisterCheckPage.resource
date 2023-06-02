@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 Resource    Activities.resource
 
 *** Variables ***
@@ -15,7 +15,6 @@ ${_CHECK_NUMBER_INPUTH_LOCATOR}    id=com.efsllc.efsmobileapp.stage:id/textinput
 Close Register Check Window
     Wait Until Element Is Visible    ${_CLOSE_REGITER_BTN_LOCATOR}
     Click Element    ${_CLOSE_REGITER_BTN_LOCATOR}
-    Wait Activity    ${HOME_ACTIVITY}    10
 
 Go Back To Amount Window
     Wait Until Element Is Visible    ${_CLOSE_REGITER_BTN_LOCATOR}

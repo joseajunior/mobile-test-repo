@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_my_cards_title}                xpath=//android.view.ViewGroup[@resource-id="com.wex.fleet.driverdash.stage:id/more_remove_card_toolbar"]/android.widget.TextView[@text="My Cards"]

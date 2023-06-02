@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_enter_phone_title}                 xpath=//XCUIElementTypeStaticText[@name="EnterPhoneNumberLabel"]

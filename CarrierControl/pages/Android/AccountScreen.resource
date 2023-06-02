@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 Resource    Activities.resource
 
 *** Variables ***
@@ -20,7 +20,6 @@ ${_CALL_SUPPORT_LOCATOR}    xpath=//android.widget.TextView[text()="Call custome
 Close Settings Window
     Wait Until Page Contains Element    ${_CLOSE_SETTINGS_LOCATOR}
     Click Element    ${_CLOSE_SETTINGS_LOCATOR}
-    Wait Activity    ${HOME_ACTIVITY}    10
 
 Get Last Digits For The Card
     Wait Until Page Contains Element    ${_MASKED_CARD_NUMBER_LOCATOR}
@@ -66,4 +65,3 @@ Click On Call Customer Support
 Click On Log Out Button
     Wait Until Page Contains Element    ${_LOG_OUT_BTN_LOCATOR}
     Click Element    ${_LOG_OUT_BTN_LOCATOR}
-    Wait Activity    ${LOGIN_ACTIVITY}    10

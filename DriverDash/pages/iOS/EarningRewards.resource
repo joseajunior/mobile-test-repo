@@ -1,5 +1,5 @@
 *** Settings ***
-Library     AppiumLibrary
+Library     WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_setup_rewards}                  xpath=//XCUIElementTypeButton[@name="SetupRewardsButton"]

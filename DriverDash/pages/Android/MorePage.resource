@@ -1,5 +1,5 @@
 *** Settings ***
-Library     AppiumLibrary
+Library     WexRobotLib.MobileLibrary
 Resource    ${CURDIR}${/}HomeBaseLocators.resource
 
 *** Variables ***

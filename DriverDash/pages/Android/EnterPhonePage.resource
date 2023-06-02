@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_phone_number_login}    id=com.wex.fleet.driverdash.stage:id/login_phone_number_edit_text
@@ -9,7 +9,6 @@ ${_having_trouble}        id=com.wex.fleet.driverdash.stage:id/login_phone_butto
 *** Keywords ***
 Input "${phone_number}" As Phone Number
     Wait Until Element Is Visible    ${_phone_number_login}    timeout=10
-    Clear Text    ${_phone_number_login}
     Input Text    ${_phone_number_login}    ${phone_number}
 
 Click On Next Button For Phone Login

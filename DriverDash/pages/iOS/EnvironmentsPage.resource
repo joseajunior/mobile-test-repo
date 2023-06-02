@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_north_america_region}       chain=**/XCUIElementTypeButton[`label == "North America"`]

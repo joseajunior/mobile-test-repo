@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_card_image_add_card}     id=com.wex.fleet.driverdash.stage:id/nonccn_card_image

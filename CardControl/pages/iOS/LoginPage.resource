@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_LOGIN_LOGO_LOCATOR}    chain=**/XCUIElementTypeImage[`label == "WEXLogo"`]

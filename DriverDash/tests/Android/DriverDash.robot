@@ -1,5 +1,5 @@
 *** Settings ***
-Library         AppiumLibrary
+Library         WexRobotLib.MobileLibrary
 Variables       ${CURDIR}${/}..${/}..${/}..${/}Configuration${/}credentials.yml
 Resource        ${CURDIR}${/}..${/}..${/}..${/}Configuration${/}Placeholder.resource
 Resource        ${CURDIR}${/}..${/}..${/}..${/}Resources${/}DatabaseKeywords.resource
@@ -87,7 +87,6 @@ Testing Database
     [Setup]    Connect To Postgres Database
     ${code}    Get Latest Code For "${phone_number}" Phone Number
     Log To Console    Code: ${code}
-    [Teardown]    Disconnect From Database
 
 *** Keywords ***
 Open Driver Dash Application

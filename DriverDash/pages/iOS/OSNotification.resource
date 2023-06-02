@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_ALLOW_BTN}           xpath=//XCUIElementTypeAlert[@name="“DriverDash” Would Like to Send You Notifications"]//XCUIElementTypeButton[@name="Allow"]

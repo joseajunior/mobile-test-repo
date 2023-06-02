@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_home_tab}    id=com.wex.fleet.driverdash.stage:id/home_navigation

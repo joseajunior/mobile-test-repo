@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_terms_of_use_title}                xpath=//XCUIElementTypeNavigationBar[@name="Terms of Use"]/XCUIElementTypeStaticText[@name="Terms of Use"]

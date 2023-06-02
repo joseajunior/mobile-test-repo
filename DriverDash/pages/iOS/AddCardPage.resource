@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_navigate_up_add_card}    xpath=//XCUIElementTypeNavigationBar[@name="Add card"]/XCUIElementTypeButton

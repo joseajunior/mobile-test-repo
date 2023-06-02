@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_ALLOW_BTN_LOCATOR}    chain=**/XCUIElementTypeButton[`label == "Allow"`]

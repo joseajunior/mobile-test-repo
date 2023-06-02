@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_code_number_input}        id=com.wex.fleet.driverdash.stage:id/login_code_edit_text

@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_GET_STARTED_BUTTON}    id=com.wex.fleet.driverdash.stage:id/onboardingFragmentButtonContinue

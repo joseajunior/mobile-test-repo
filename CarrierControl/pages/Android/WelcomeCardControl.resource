@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_WINDOW_LOCATOR}             id=com.efsllc.efscarriercontrol.stage:id/tv_welcome_main

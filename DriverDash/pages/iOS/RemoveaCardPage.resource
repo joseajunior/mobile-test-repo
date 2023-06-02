@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_my_cards_title}          xpath=//XCUIElementTypeNavigationBar[@name="Remove a card"]//XCUIElementTypeStaticText[@name="Remove a card"]

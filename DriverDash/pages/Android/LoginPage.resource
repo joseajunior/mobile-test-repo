@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_USERNAME_LOCATOR}               id=com.wex.fleet.driverdash.stage:id/username_edit_text

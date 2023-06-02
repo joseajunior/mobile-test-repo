@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_receipt_history_title}          xpath=//XCUIElementTypeNavigationBar[@name="Receipt history"]//XCUIElementTypeStaticText[@name="Receipt history"]

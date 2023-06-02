@@ -1,5 +1,5 @@
 *** Settings ***
-Library     AppiumLibrary
+Library     WexRobotLib.MobileLibrary
 
 
 *** Variables ***

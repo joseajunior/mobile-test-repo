@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_terms_of_use_title}                xpath=//android.view.ViewGroup[@resource-id="com.wex.fleet.driverdash.stage:id/more_terms_toolbar"]/android.widget.TextView[@text="Terms of Use"]

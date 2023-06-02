@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_DIT_ENVIRONMENT}    xpath=//XCUIElementTypeButton[@name="DIT"]

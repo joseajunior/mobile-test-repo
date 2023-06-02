@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_code_number_input}        xpath=//XCUIElementTypeTextField[@name="ConfirmationCodeTextField"]

@@ -1,5 +1,5 @@
 *** Settings ***
-Library         AppiumLibrary
+Library         WexRobotLib.MobileLibrary
 Variables       ${CURDIR}${/}..${/}..${/}..${/}Configuration${/}credentials.yml
 Resource        ${CURDIR}${/}..${/}..${/}..${/}Configuration${/}Placeholder.resource
 Resource        ${CURDIR}${/}..${/}..${/}..${/}Resources${/}DatabaseKeywords.resource
@@ -48,7 +48,7 @@ E2E Test Case Login/More/Logout
     [Teardown]    Close Driver Dash Application
 
 Login With Number
-    [Tags]    db
+    [Tags]    db    checked
     [Setup]    Open Driver Dash Application
     Select "North America" Region And "Staging"
     Click On Get Started Button
@@ -167,8 +167,7 @@ Get Code For Phone Number: ${number}
     Connect To Postgres Database
     ${code}    Get Latest Code For "${number}" Phone Number
 
-    [Teardown]    Run Keyword and Ignore Error    Disconnect From Database
-    RETURN    ${code}
+    [Return]    ${code}
 
 Check Face ID for Login
     Enable Face ID To Login Authentication

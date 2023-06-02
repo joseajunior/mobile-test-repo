@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_continue_earning_rewards}       id=com.wex.fleet.driverdash.stage:id/loyalty_onboarding_continue

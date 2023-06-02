@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_GET_STARTED_BUTTON}    chain=**/XCUIElementTypeButton[`label == "Get started"`]

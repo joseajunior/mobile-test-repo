@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_privacy_policy_title}                xpath=//XCUIElementTypeNavigationBar[@name="Privacy Policy"]/XCUIElementTypeStaticText[@name="Privacy Policy"]

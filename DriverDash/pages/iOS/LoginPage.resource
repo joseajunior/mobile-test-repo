@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_USERNAME_LOCATOR}               chain=**/XCUIElementTypeTextField[`value == "Username"`]

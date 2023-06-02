@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_receipt_history_title}          xpath=//android.view.ViewGroup[@resource-id="com.wex.fleet.driverdash.stage:id/receipt_history_toolbar"]//android.widget.TextView[@text='Receipt History']

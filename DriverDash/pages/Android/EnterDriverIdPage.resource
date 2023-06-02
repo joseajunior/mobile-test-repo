@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_enter_driver_id_title}        id=com.wex.fleet.driverdash.stage:id/textViewDriverId

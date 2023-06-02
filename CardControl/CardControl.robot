@@ -1,5 +1,5 @@
 *** Settings ***
-Library     AppiumLibrary
+Library     WexRobotLib.MobileLibrary
 Resource    ${CURDIR}/pages/${platformName}/EnvironmentsPage.resource
 Resource    ${CURDIR}/pages/${platformName}/LoginPage.resource
 Resource    ${CURDIR}/pages/${platformName}/OnboardingHomeScreenPage.resource

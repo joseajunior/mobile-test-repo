@@ -1,5 +1,5 @@
 *** Settings ***
-Library    AppiumLibrary
+Library    WexRobotLib.MobileLibrary
 
 *** Variables ***
 ${_NAVIGATE_UP_LOCATOR}    chain=**/XCUIElementTypeButton[`label == "person.circle"`]
