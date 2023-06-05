@@ -139,7 +139,6 @@ Get Card Data
 
 Check/Uncheck Transaction Alerts
     ${status}    Get Transaction Alerts Status
-    Log To Console    Transaction Alert Status: ${status}
     IF    ${status}
         Disable Transaction Alerts
         Enable Transaction Alerts
@@ -150,7 +149,6 @@ Check/Uncheck Transaction Alerts
 
 Check/Uncheck Carwash Prompts
     ${status}    Get Carwash Prompts Status
-    Log To Console    Carwash Prompts Status: ${status}
     IF    ${status}
         Disable Carwash Prompts
         Enable Carwash Prompts

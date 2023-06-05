@@ -17,10 +17,8 @@ Close Privacy Policy Page
 __If_Google_Chrome_Opened_Go_Back_To_App
     Sleep    4s
     ${current_activity}    Get Activity
-    Log To Console    Google Activity: ${current_activity}
     WHILE    'org.chromium.chrome.browser' in '${current_activity}'
         Go Back
         Sleep    1s
         ${current_activity}    Get Activity
-        Log To Console    Google Activity: ${current_activity}
     END

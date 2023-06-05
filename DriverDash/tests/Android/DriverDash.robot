@@ -39,7 +39,7 @@ E2E Test Case Login/More/Logout
     [Setup]    Open Driver Dash Application
     Click On Get Started Button
     Login On Driver Dash With "dbrxom.driver" Username and "Tester23" Password
-    Run Keyword And Ignore Error    Click On Ok On Popup
+    Click On Ok On Popup
     Click On More Tab
     Test Receipt History
     Check/Uncheck Fingerprint Authentication
@@ -50,7 +50,7 @@ E2E Test Case Login/More/Logout
     [Teardown]    Close Driver Dash Application
 
 Login With Number
-    [Tags]    db
+    # [Tags]    db
     [Setup]    Open Driver Dash Application
     Click On Get Started Button
     Click On Don't Have Username or Password Button
@@ -86,7 +86,6 @@ Testing Database
     [Tags]    checked    test    db
     [Setup]    Connect To Postgres Database
     ${code}    Get Latest Code For "${phone_number}" Phone Number
-    Log To Console    Code: ${code}
 
 *** Keywords ***
 Open Driver Dash Application
@@ -148,7 +147,6 @@ Get Card Data
 
 Check/Uncheck Transaction Alerts
     ${status}    Get Transaction Alerts Status
-    Log To Console    Transaction Alert Status: ${status}
     IF    ${status}
         Disable Transaction Alerts
         Enable Transaction Alerts
@@ -159,7 +157,6 @@ Check/Uncheck Transaction Alerts
 
 Check/Uncheck Carwash Prompts
     ${status}    Get Carwash Prompts Status
-    Log To Console    Carwash Prompts Status: ${status}
     IF    ${status}
         Disable Carwash Prompts
         Enable Carwash Prompts
@@ -170,7 +167,6 @@ Check/Uncheck Carwash Prompts
 
 Check/Uncheck Fingerprint Authentication
     ${status}    Get Fingerprint Authentication Status
-    Log To Console    Fingerprint Authentication Status: ${status}
     IF    ${status}
         Disable Fingerprint Authentication
         Enable Fingerprint Authentication
@@ -187,8 +183,7 @@ Get Code For Phone Number: ${number}
     Connect To Postgres Database
     ${code}    Get Latest Code For "${number}" Phone Number
 
-    [Teardown]    Run Keyword and Ignore Error    Disconnect From Database
-    RETURN    ${code}
+    [Return]    ${code}
 
 Swipe Cards Until Find Card With ${digits} As Five Digits
     ${last_digits}    Get Card's Last Five Digits

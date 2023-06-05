@@ -30,7 +30,6 @@ Get Transaction Alerts Status
     ELSE
         ${status}    Set Variable    ${False}
     END
-    Log To Console    Value: ${status}
     [Return]    ${status}
 
 Enable Transaction Alerts
@@ -55,7 +54,6 @@ Get Face ID To Login Status
     ELSE
         ${status}    Set Variable    ${False}
     END
-    Log To Console    Value: ${status}
     [Return]    ${status}
 
 Enable Face ID To Login Authentication
@@ -78,7 +76,6 @@ Get Face ID To Pay Status
     ELSE
         ${status}    Set Variable    ${False}
     END
-    Log To Console    Value: ${status}
     [Return]    ${status}
 
 Enable Face ID To Pay
@@ -101,7 +98,6 @@ Get Carwash Prompts Status
     ELSE
         ${status}    Set Variable    ${False}
     END
-    Log To Console    Value: ${status}
     [Return]    ${status}
 
 Enable Carwash Prompts
